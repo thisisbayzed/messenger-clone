@@ -1,4 +1,6 @@
+import ToasterProviders from "@/contexts/ToasterProviders";
 import "./globals.css";
+import AuthProviders from "@/contexts/AuthProviders";
 
 export const metadata = {
   title: "Messenger Clone",
@@ -8,7 +10,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <AuthProviders>
+          <ToasterProviders />
+          {children}
+        </AuthProviders>
+      </body>
     </html>
   );
 }
