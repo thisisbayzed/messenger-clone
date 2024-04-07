@@ -1,7 +1,9 @@
+import Emtystates from "@/components/Emtystates";
+
 function Users() {
   return (
-    <div>
-      <h1>hellow users</h1>
+    <div className="hidden lg:block lg:pl-80 h-full ">
+      <Emtystates/>
     </div>
   );
 }
