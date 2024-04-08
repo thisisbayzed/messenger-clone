@@ -1,10 +1,17 @@
+import getUsers from "@/actions/getUsers";
+import Userslist from "@/components/Userslist";
 import Sidebarlayout from "@/layouts/Sidebarlayout";
 import React from "react";
 
-function Userslayout({ children }) {
+async function Userslayout({ children }) {
+  const Users = await getUsers();
+
   return (
     <Sidebarlayout>
-      <div className="h-full">{children}</div>
+      <div className="h-full">
+        <Userslist users={Users} />
+        {children}
+      </div>
     </Sidebarlayout>
   );
 }
